@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Socials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      display: none;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      display: none;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .click-to-enter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    h1::before {}
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      padding: 10px 16px;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      transition: 0.3s;
+      width: fit-content;
+    }
+
+    .social-links a:hover {
+      background: #333;
+      color: #ffdc00;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .badge {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 60px;
+      height: auto;
+      z-index: 10;
+    }
+      
+
+    
+  </style>
+</head>
+<body>
+  
+  <div class="click-to-enter" onclick="enableVideo()">Click to Enter</div>
+
+  <video id="bg-video" loop>
+    <source src="ssstik.io_@s0rvex_1747499775664.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <div class="container" id="mainContent">
+    
+    <h1 style="font-size: 28px;">Lewa is the GOAT 🦇</h1>
+    
+    <div class="social-links">
+      <a href="https://instagram.com/_f6v" target="_blank">Instagram: @_f6v</a>
+      <a href="https://www.snapchat.com/add/q8abad" target="_blank">Snapchat: q8abad</a>
+      <a href="https://discord.com/users/c.l" target="_blank">Discord: c.l</a>
+      <a href="https://twitter.com/NJNJ" target="_blank">Twitter/X: @NJNJ</a>
+    </div>
+    <div class="footer">Made by Lewa</div>
+  </div>
+
+  <script>
+    function enableVideo() {
+      const video = document.getElementById('bg-video');
+      const container = document.getElementById('mainContent');
+      const overlay = document.querySelector('.click-to-enter');
+      video.style.display = 'block';
+      container.style.display = 'block';
+      overlay.style.display = 'none';
+      video.muted = false;
+      video.play();
+    }
+  </script>
+</body>
+</html>
